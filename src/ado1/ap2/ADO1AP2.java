@@ -135,7 +135,7 @@ public class ADO1AP2 {
      * até o usuario sair.
      */
     public static void main(String[] args) {
-        String[] lista = new String[5];
+        String[] lista = new String[50];
         System.out.println("****BEM VINDx A SUA LISTA****");
         int menu = 0;
         do {

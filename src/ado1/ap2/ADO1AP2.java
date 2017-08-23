@@ -108,25 +108,35 @@ public class ADO1AP2 {
         return lista;
     }
 
+    /**
+     * função reorganiza o vetor removendo os espaços em branco (null) deixado
+     * logo a após um nome ser excluido o primeiro if verica se aquela variavel
+     * do vetor está vazia, e atribui a variavel o dado contido no proximo
+     * indice também atribui o proximo indice como null, formando uma reação em
+     * cadeia onde o null vai sendo "passado para baixo"
+     */
     static String[] arrumaVetor(String[] lista) {
-        int n = 1;
+        int j = 1;
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i] == null) {
-                lista[i] = null;
-                String v = lista[n];
-                lista[i] = v;
-                lista[n] = null;
-
-                //return lista;
+            if (lista[i] == null || lista[i].equalsIgnoreCase("")) {
+                if (!(i == (lista.length - 1))) {
+                    lista[i] = lista[j];
+                    lista[j] = null;
+                }
             }
-            n = n + 1;
+            j = j + 1;
         }
         return lista;
     }
 
+    /**
+     * função principal possui um switch case com valores das fucionalidades da
+     * lista função está presa em um laço que faz que o progama seja executado
+     * até o usuario sair.
+     */
     public static void main(String[] args) {
         String[] lista = new String[5];
-        System.out.println("*BEM VINDx A SUA LISTA*");
+        System.out.println("****BEM VINDx A SUA LISTA****");
         int menu = 0;
         do {
 
